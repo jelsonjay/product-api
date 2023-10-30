@@ -6,15 +6,17 @@ import {errorMiddleware} from "./middleware/errorMiddleware.js"
 import cors from "cors"
 const app = express()
 
+
 dotenv.config()
 const MONGODB_URL = process.env.MONGODB_URL
 const FRONTEND = process.env.FRONTEND
-var corsOptions = {
-  origin: FRONTEND,
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+
+// var corsOptions = {
+//   origin: FRONTEND,
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
  
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 

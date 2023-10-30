@@ -1,6 +1,5 @@
 import express from "express"
-import Product from "../models/Product.js"
-import {getProducts, getProduct, createProduct, deleteProduct} from "../controller/productController.js"
+import {getProducts, getProduct, createProduct, deleteProduct, updateProduct } from "../controller/productController.js"
 
 const router = express.Router()
 
@@ -17,13 +16,11 @@ router.post("/", createProduct)
 
 
 // =====UPDATE PRODUCT ON DATABASE======
-router.put("/:id", )
+router.put("/:id", updateProduct)
 
 
 // =====DELETE PRODUCT ON DATABASE======
 router.delete("/:id", deleteProduct)
-
-
 
 
 export default router
